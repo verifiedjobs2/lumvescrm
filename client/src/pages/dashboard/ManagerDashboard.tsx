@@ -8,10 +8,8 @@ import {
   HiUserGroup,
 } from 'react-icons/hi';
 import { StatsCard, Card } from '../../components/common';
-import { useAuth } from '../../context/AuthContext';
 
 const ManagerDashboard: React.FC = () => {
-  const { user } = useAuth();
 
   // Mock data - will be replaced with API calls in Phase 4
   const stats = {

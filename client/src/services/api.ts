@@ -28,10 +28,10 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => response,
   (error: AxiosError<{ message?: string }>) => {
-    const message = error.response?.data?.message || 'An error occurred';
+    const status = error.response?.status;
 
     // Handle specific error codes
-    if (error.response?.status === 401) {
+    if (status === 401) {
       // Unauthorized - clear token and redirect to login
       localStorage.removeItem('token');
       localStorage.removeItem('user');
@@ -40,11 +40,11 @@ api.interceptors.response.use(
       if (!window.location.pathname.includes('/login')) {
         window.location.href = '/login';
       }
-    } else if (error.response?.status === 403) {
+    } else if (status === 403) {
       toast.error('Access denied. Insufficient permissions.');
-    } else if (error.response?.status === 429) {
+    } else if (status === 429) {
       toast.error('Too many requests. Please try again later.');
-    } else if (error.response?.status >= 500) {
+    } else if (status && status >= 500) {
       toast.error('Server error. Please try again later.');
     }
 
