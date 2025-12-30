@@ -7,10 +7,11 @@ export const config = {
   nodeEnv: process.env.NODE_ENV || 'development',
 
   db: {
-    dialect: process.env.DB_DIALECT || 'mysql',
+    url: process.env.DATABASE_URL || '',
+    dialect: process.env.DB_DIALECT || 'sqlite',
     storage: process.env.DB_STORAGE || './lumves_crm.sqlite',
     host: process.env.DB_HOST || 'localhost',
-    port: parseInt(process.env.DB_PORT || '3306'),
+    port: parseInt(process.env.DB_PORT || '5432'),
     name: process.env.DB_NAME || 'lumves_crm',
     user: process.env.DB_USER || 'root',
     password: process.env.DB_PASSWORD || '',
