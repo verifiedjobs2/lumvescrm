@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumves CRM - User Guide</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    .cover-page {
+      text-align: center;
+      padding: 100px 0;
+      page-break-after: always;
+    }
+    .cover-page h1 {
+      font-size: 48px;
+      color: #6366f1;
+      margin-bottom: 20px;
+    }
+    .cover-page .subtitle {
+      font-size: 24px;
+      color: #666;
+      margin-bottom: 40px;
+    }
+    .cover-page .version {
+      font-size: 16px;
+      color: #888;
+      margin-bottom: 100px;
+    }
+    .cover-page .support {
+      font-size: 14px;
+      color: #666;
+      margin-top: 50px;
+    }
+    .cover-page .support a {
+      color: #6366f1;
+    }
+    h1 {
+      color: #6366f1;
+      font-size: 28px;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #6366f1;
+      padding-bottom: 10px;
+    }
+    h2 {
+      color: #4f46e5;
+      font-size: 22px;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    h3 {
+      color: #333;
+      font-size: 18px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    p {
+      margin-bottom: 15px;
+    }
+    ul, ol {
+      margin-left: 30px;
+      margin-bottom: 15px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .highlight-box {
+      background: #f0f9ff;
+      border-left: 4px solid #6366f1;
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .warning-box {
+      background: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .credentials-box {
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+    .credentials-box h4 {
+      margin-bottom: 10px;
+      color: #334155;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    th, td {
+      border: 1px solid #e2e8f0;
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background: #f1f5f9;
+      font-weight: 600;
+    }
+    code {
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'Consolas', monospace;
+      font-size: 14px;
+    }
+    pre {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 15px 0;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+      color: inherit;
+    }
+    .page-break {
+      page-break-before: always;
+    }
+    .toc {
+      background: #f8fafc;
+      padding: 30px;
+      border-radius: 8px;
+      margin: 30px 0;
+    }
+    .toc h2 {
+      margin-top: 0;
+    }
+    .toc ol {
+      margin-left: 20px;
+    }
+    .toc li {
+      margin-bottom: 10px;
+    }
+    .screenshot-placeholder {
+      background: #f1f5f9;
+      border: 2px dashed #cbd5e1;
+      padding: 40px;
+      text-align: center;
+      margin: 20px 0;
+      border-radius: 8px;
+      color: #64748b;
+    }
+    .tech-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 8px;
+    }
+    .tech-card h4 {
+      color: #6366f1;
+      margin-bottom: 10px;
+    }
+    footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #e2e8f0;
+      text-align: center;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cover Page -->
+  <div class="cover-page">
+    <h1>Lumves CRM</h1>
+    <p class="subtitle">Complete User Guide & Technical Documentation</p>
+    <p class="version">Version 1.0.0 | December 2024</p>
+
+    <div style="margin: 60px 0;">
+      <p style="font-size: 18px; color: #444;">Sales Management System</p>
+      <p style="color: #666;">Lead Tracking | Customer Management | Order Processing</p>
+    </div>
+
+    <div class="support">
+      <p><strong>Support:</strong> <a href="mailto:support@gautamjain2026.com">support@gautamjain2026.com</a></p>
+      <p style="margin-top: 10px;">GitHub: <a href="https://github.com/verifiedjobs2/lumvescrm">github.com/verifiedjobs2/lumvescrm</a></p>
+    </div>
+  </div>
+
+  <!-- Table of Contents -->
+  <div class="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+      <li>Introduction</li>
+      <li>Getting Started
+        <ol type="a">
+          <li>Accessing the Application</li>
+          <li>Login Process</li>
+          <li>User Roles</li>
+        </ol>
+      </li>
+      <li>Application Features
+        <ol type="a">
+          <li>Dashboard</li>
+          <li>Customer Management</li>
+          <li>Lead Management</li>
+          <li>Call Tracking</li>
+          <li>Order Management</li>
+          <li>Follow-ups</li>
+          <li>Reports</li>
+          <li>User Management (Admin)</li>
+        </ol>
+      </li>
+      <li>Technology Stack</li>
+      <li>Infrastructure & Hosting</li>
+      <li>Admin Access & Credentials</li>
+      <li>Scaling Guide</li>
+      <li>Troubleshooting</li>
+      <li>Support</li>
+    </ol>
+  </div>
+
+  <!-- Chapter 1: Introduction -->
+  <h1 class="page-break">1. Introduction</h1>
+
+  <p>Lumves CRM is a comprehensive Customer Relationship Management system designed specifically for sales teams. It provides a centralized platform to manage leads, track customer interactions, process orders, and generate insightful reports.</p>
+
+  <h2>Key Features</h2>
+  <ul>
+    <li><strong>Lead Management:</strong> Track and nurture potential customers through the sales pipeline</li>
+    <li><strong>Customer Database:</strong> Maintain detailed records of all customers</li>
+    <li><strong>Call Tracking:</strong> Log and monitor all customer calls</li>
+    <li><strong>Order Processing:</strong> Create and manage customer orders</li>
+    <li><strong>Follow-up System:</strong> Schedule and track follow-up activities</li>
+    <li><strong>Product Catalog:</strong> Manage your product inventory</li>
+    <li><strong>Reports & Analytics:</strong> Generate insights from sales data</li>
+    <li><strong>Role-based Access:</strong> Admin, Manager, and Agent roles with different permissions</li>
+  </ul>
+
+  <!-- Chapter 2: Getting Started -->
+  <h1 class="page-break">2. Getting Started</h1>
+
+  <h2>2.1 Accessing the Application</h2>
+
+  <div class="highlight-box">
+    <strong>Application URL:</strong><br>
+    <code>https://client-chi-jade-53.vercel.app</code>
+  </div>
+
+  <p>Open your web browser (Chrome, Firefox, Edge, or Safari recommended) and navigate to the application URL. You will be presented with the login screen.</p>
+
+  <h2>2.2 Login Process</h2>
+
+  <p>To login to the application:</p>
+  <ol>
+    <li>Enter your <strong>Email Address</strong> in the email field</li>
+    <li>Enter your <strong>Password</strong> in the password field</li>
+    <li>Click the <strong>"Sign In"</strong> button</li>
+    <li>Upon successful authentication, you will be redirected to the Dashboard</li>
+  </ol>
+
+  <div class="screenshot-placeholder">
+    <p><strong>Login Screen</strong></p>
+    <p>The login page features:</p>
+    <ul style="list-style: none; margin: 10px 0;">
+      <li>- Lumves CRM branding at the top</li>
+      <li>- Email input field</li>
+      <li>- Password input field</li>
+      <li>- Sign In button</li>
+      <li>- Demo credentials section</li>
+    </ul>
+  </div>
+
+  <h2>2.3 User Roles</h2>
+
+  <table>
+    <tr>
+      <th>Role</th>
+      <th>Description</th>
+      <th>Access Level</th>
+    </tr>
+    <tr>
+      <td><strong>Admin</strong></td>
+      <td>System administrator with full access</td>
+      <td>All features + User Management</td>
+    </tr>
+    <tr>
+      <td><strong>Manager</strong></td>
+      <td>Team manager overseeing agents</td>
+      <td>All features except User Management</td>
+    </tr>
+    <tr>
+      <td><strong>Agent</strong></td>
+      <td>Sales representative</td>
+      <td>Basic CRM features (own data only)</td>
+    </tr>
+  </table>
+
+  <!-- Chapter 3: Application Features -->
+  <h1 class="page-break">3. Application Features</h1>
+
+  <h2>3.1 Dashboard</h2>
+  <p>The Dashboard provides an overview of your sales metrics and key performance indicators. Different roles see different dashboards:</p>
+
+  <h3>Admin Dashboard</h3>
+  <ul>
+    <li>Total system users and activity</li>
+    <li>Overall revenue metrics</li>
+    <li>System-wide statistics</li>
+  </ul>
+
+  <h3>Manager Dashboard</h3>
+  <ul>
+    <li>Team performance metrics</li>
+    <li>Top performing agents</li>
+    <li>Conversion rates</li>
+    <li>Monthly revenue tracking</li>
+  </ul>
+
+  <h3>Agent Dashboard</h3>
+  <ul>
+    <li>Personal performance stats</li>
+    <li>Today's tasks and follow-ups</li>
+    <li>Recent calls and activities</li>
+  </ul>
+
+  <h2>3.2 Customer Management</h2>
+  <p>Navigate to <strong>Customers</strong> from the sidebar to access customer management.</p>
+
+  <h3>Features:</h3>
+  <ul>
+    <li><strong>View Customers:</strong> Browse all customers in a searchable table</li>
+    <li><strong>Add Customer:</strong> Create new customer records with contact details</li>
+    <li><strong>Edit Customer:</strong> Update existing customer information</li>
+    <li><strong>Customer History:</strong> View interaction history and orders</li>
+  </ul>
+
+  <h2>3.3 Lead Management</h2>
+  <p>The <strong>Leads</strong> section helps you track potential customers through the sales pipeline.</p>
+
+  <h3>Lead Stages:</h3>
+  <ol>
+    <li><strong>New:</strong> Fresh lead, not yet contacted</li>
+    <li><strong>Contacted:</strong> Initial contact made</li>
+    <li><strong>Qualified:</strong> Lead shows genuine interest</li>
+    <li><strong>Proposal:</strong> Proposal sent to lead</li>
+    <li><strong>Negotiation:</strong> In negotiation phase</li>
+    <li><strong>Won/Lost:</strong> Final outcome</li>
+  </ol>
+
+  <h2>3.4 Call Tracking</h2>
+  <p>Track all customer and lead calls in the <strong>Calls</strong> section.</p>
+
+  <h3>Call Types:</h3>
+  <ul>
+    <li>Inbound calls</li>
+    <li>Outbound calls</li>
+    <li>Follow-up calls</li>
+    <li>Support calls</li>
+  </ul>
+
+  <h2 class="page-break">3.5 Order Management</h2>
+  <p>Create and track orders in the <strong>Orders</strong> section.</p>
+
+  <h3>Order Workflow:</h3>
+  <ol>
+    <li>Create new order</li>
+    <li>Add products and quantities</li>
+    <li>Set pricing and discounts</li>
+    <li>Process order</li>
+    <li>Track delivery status</li>
+  </ol>
+
+  <h2>3.6 Follow-ups</h2>
+  <p>Schedule and manage follow-up activities to ensure no lead falls through the cracks.</p>
+
+  <h3>Follow-up Features:</h3>
+  <ul>
+    <li>Schedule follow-up date and time</li>
+    <li>Set priority levels</li>
+    <li>Add notes and reminders</li>
+    <li>Mark as completed</li>
+  </ul>
+
+  <h2>3.7 Products</h2>
+  <p>Manage your product catalog including:</p>
+  <ul>
+    <li>Product name and SKU</li>
+    <li>Categories (Smartphones, Laptops, TVs, Kitchen Appliances, etc.)</li>
+    <li>Pricing information</li>
+    <li>Stock quantities</li>
+  </ul>
+
+  <h2>3.8 Reports</h2>
+  <p>Generate insights from your sales data:</p>
+  <ul>
+    <li>Sales reports</li>
+    <li>Lead conversion analytics</li>
+    <li>Agent performance reports</li>
+    <li>Revenue trends</li>
+  </ul>
+
+  <h2>3.9 User Management (Admin Only)</h2>
+  <p>Administrators can manage system users:</p>
+  <ul>
+    <li>Create new user accounts</li>
+    <li>Assign roles (Admin, Manager, Agent)</li>
+    <li>Activate/deactivate users</li>
+    <li>Reset passwords</li>
+  </ul>
+
+  <!-- Chapter 4: Technology Stack -->
+  <h1 class="page-break">4. Technology Stack</h1>
+
+  <h2>Frontend</h2>
+  <div class="tech-card">
+    <h4>React + TypeScript</h4>
+    <p>Modern JavaScript library for building user interfaces with type safety.</p>
+    <ul>
+      <li><strong>React 18:</strong> Component-based UI library</li>
+      <li><strong>TypeScript:</strong> Static type checking</li>
+      <li><strong>React Router:</strong> Client-side routing</li>
+      <li><strong>Tailwind CSS:</strong> Utility-first CSS framework</li>
+      <li><strong>Axios:</strong> HTTP client for API calls</li>
+      <li><strong>Recharts:</strong> Data visualization</li>
+      <li><strong>Vite:</strong> Fast build tool</li>
+    </ul>
+  </div>
+
+  <h2>Backend</h2>
+  <div class="tech-card">
+    <h4>Node.js + Express</h4>
+    <p>Server-side JavaScript runtime with Express web framework.</p>
+    <ul>
+      <li><strong>Node.js:</strong> JavaScript runtime</li>
+      <li><strong>Express.js:</strong> Web application framework</li>
+      <li><strong>Sequelize:</strong> ORM for database operations</li>
+      <li><strong>JWT:</strong> JSON Web Tokens for authentication</li>
+      <li><strong>bcrypt:</strong> Password hashing</li>
+      <li><strong>Helmet:</strong> Security headers</li>
+      <li><strong>CORS:</strong> Cross-origin resource sharing</li>
+    </ul>
+  </div>
+
+  <h2>Database</h2>
+  <div class="tech-card">
+    <h4>PostgreSQL (Supabase)</h4>
+    <p>Powerful, open-source relational database hosted on Supabase.</p>
+    <ul>
+      <li><strong>PostgreSQL:</strong> Relational database</li>
+      <li><strong>Supabase:</strong> Database hosting platform</li>
+      <li><strong>Connection Pooling:</strong> Efficient connection management</li>
+      <li><strong>SSL Encryption:</strong> Secure data transmission</li>
+    </ul>
+  </div>
+
+  <!-- Chapter 5: Infrastructure -->
+  <h1 class="page-break">5. Infrastructure & Hosting</h1>
+
+  <h2>Production URLs</h2>
+  <table>
+    <tr>
+      <th>Service</th>
+      <th>URL</th>
+      <th>Platform</th>
+    </tr>
+    <tr>
+      <td>Frontend</td>
+      <td><code>https://client-chi-jade-53.vercel.app</code></td>
+      <td>Vercel</td>
+    </tr>
+    <tr>
+      <td>Backend API</td>
+      <td><code>https://lumves-crm-api.onrender.com</code></td>
+      <td>Render</td>
+    </tr>
+    <tr>
+      <td>Database</td>
+      <td>Supabase PostgreSQL</td>
+      <td>Supabase</td>
+    </tr>
+  </table>
+
+  <h2>Vercel (Frontend Hosting)</h2>
+  <div class="tech-card">
+    <h4>Accessing Vercel Dashboard</h4>
+    <ol>
+      <li>Go to <code>https://vercel.com</code></li>
+      <li>Login with your GitHub account</li>
+      <li>Select the "client" project</li>
+      <li>View deployments, logs, and settings</li>
+    </ol>
+    <p><strong>Key Features:</strong></p>
+    <ul>
+      <li>Automatic deployments on git push</li>
+      <li>Environment variables management</li>
+      <li>Custom domain support</li>
+      <li>Analytics and performance monitoring</li>
+    </ul>
+  </div>
+
+  <h2>Render (Backend Hosting)</h2>
+  <div class="tech-card">
+    <h4>Accessing Render Dashboard</h4>
+    <ol>
+      <li>Go to <code>https://render.com</code></li>
+      <li>Login with your account</li>
+      <li>Select "lumves-crm-api" service</li>
+      <li>View logs, environment variables, and settings</li>
+    </ol>
+    <p><strong>Key Features:</strong></p>
+    <ul>
+      <li>Automatic deployments from GitHub</li>
+      <li>Environment variables management</li>
+      <li>Service logs and monitoring</li>
+      <li>Manual deploy trigger</li>
+    </ul>
+    <div class="warning-box">
+      <strong>Note:</strong> Free tier services spin down after 15 minutes of inactivity. First request after sleep takes ~30 seconds.
+    </div>
+  </div>
+
+  <h2>Supabase (Database)</h2>
+  <div class="tech-card">
+    <h4>Accessing Supabase Dashboard</h4>
+    <ol>
+      <li>Go to <code>https://supabase.com</code></li>
+      <li>Login with your account</li>
+      <li>Select your project</li>
+      <li>Access Table Editor, SQL Editor, and Settings</li>
+    </ol>
+    <p><strong>Key Features:</strong></p>
+    <ul>
+      <li>Table Editor for data management</li>
+      <li>SQL Editor for custom queries</li>
+      <li>Database backups</li>
+      <li>Connection string management</li>
+    </ul>
+  </div>
+
+  <!-- Chapter 6: Admin Credentials -->
+  <h1 class="page-break">6. Admin Access & Credentials</h1>
+
+  <div class="warning-box">
+    <strong>Security Warning:</strong> Change all default passwords immediately after first login. Store credentials securely and never share them publicly.
+  </div>
+
+  <h2>Application Login</h2>
+  <div class="credentials-box">
+    <h4>Admin Account</h4>
+    <table>
+      <tr>
+        <td><strong>URL</strong></td>
+        <td><code>https://client-chi-jade-53.vercel.app</code></td>
+      </tr>
+      <tr>
+        <td><strong>Email</strong></td>
+        <td><code>admin@lumves.com</code></td>
+      </tr>
+      <tr>
+        <td><strong>Password</strong></td>
+        <td><code>admin123</code></td>
+      </tr>
+    </table>
+  </div>
+
+  <h2>Platform Access</h2>
+
+  <div class="credentials-box">
+    <h4>Vercel</h4>
+    <p>Login via GitHub OAuth at <code>https://vercel.com</code></p>
+  </div>
+
+  <div class="credentials-box">
+    <h4>Render</h4>
+    <p>Login at <code>https://render.com</code> with your registered account</p>
+  </div>
+
+  <div class="credentials-box">
+    <h4>Supabase</h4>
+    <p>Login at <code>https://supabase.com</code> with your registered account</p>
+  </div>
+
+  <div class="credentials-box">
+    <h4>GitHub Repository</h4>
+    <p>Repository: <code>https://github.com/verifiedjobs2/lumvescrm</code></p>
+  </div>
+
+  <!-- Chapter 7: Scaling Guide -->
+  <h1 class="page-break">7. Scaling Guide</h1>
+
+  <p>As your business grows, you may need to scale the application. Here's how to upgrade each component:</p>
+
+  <h2>7.1 Frontend Scaling (Vercel)</h2>
+  <div class="tech-card">
+    <h4>Current: Free Tier</h4>
+    <p><strong>Upgrade Path:</strong></p>
+    <ol>
+      <li><strong>Pro Plan ($20/month):</strong> More bandwidth, team features</li>
+      <li><strong>Enterprise:</strong> Custom pricing for large organizations</li>
+    </ol>
+    <p><strong>When to Upgrade:</strong></p>
+    <ul>
+      <li>Exceeding 100GB bandwidth/month</li>
+      <li>Need custom domains with SSL</li>
+      <li>Require team collaboration features</li>
+    </ul>
+  </div>
+
+  <h2>7.2 Backend Scaling (Render)</h2>
+  <div class="tech-card">
+    <h4>Current: Free Tier</h4>
+    <p><strong>Upgrade Path:</strong></p>
+    <ol>
+      <li><strong>Starter ($7/month):</strong> No sleep, more RAM</li>
+      <li><strong>Standard ($25/month):</strong> 2GB RAM, better CPU</li>
+      <li><strong>Pro ($85/month):</strong> 4GB RAM, dedicated resources</li>
+    </ol>
+    <p><strong>When to Upgrade:</strong></p>
+    <ul>
+      <li>Service sleeping is unacceptable</li>
+      <li>Need more concurrent connections</li>
+      <li>Require faster response times</li>
+    </ul>
+  </div>
+
+  <h2>7.3 Database Scaling (Supabase)</h2>
+  <div class="tech-card">
+    <h4>Current: Free Tier</h4>
+    <p><strong>Upgrade Path:</strong></p>
+    <ol>
+      <li><strong>Pro ($25/month):</strong> 8GB database, daily backups</li>
+      <li><strong>Team ($599/month):</strong> Larger storage, priority support</li>
+      <li><strong>Enterprise:</strong> Custom scaling, SLA</li>
+    </ol>
+    <p><strong>When to Upgrade:</strong></p>
+    <ul>
+      <li>Database exceeding 500MB</li>
+      <li>Need point-in-time recovery</li>
+      <li>Require more concurrent connections</li>
+    </ul>
+  </div>
+
+  <h2>7.4 Advanced Scaling Options</h2>
+
+  <h3>Horizontal Scaling</h3>
+  <ul>
+    <li>Deploy multiple backend instances</li>
+    <li>Use load balancer (included in Render paid plans)</li>
+    <li>Implement Redis for session management</li>
+  </ul>
+
+  <h3>Database Optimization</h3>
+  <ul>
+    <li>Add database indexes for frequently queried columns</li>
+    <li>Implement query caching</li>
+    <li>Consider read replicas for heavy read workloads</li>
+  </ul>
+
+  <h3>CDN & Caching</h3>
+  <ul>
+    <li>Vercel automatically provides global CDN</li>
+    <li>Implement API response caching</li>
+    <li>Use service workers for offline support</li>
+  </ul>
+
+  <!-- Chapter 8: Troubleshooting -->
+  <h1 class="page-break">8. Troubleshooting</h1>
+
+  <h2>Common Issues</h2>
+
+  <h3>Issue: Login fails with "Network Error"</h3>
+  <div class="highlight-box">
+    <p><strong>Cause:</strong> Backend service may be sleeping (free tier)</p>
+    <p><strong>Solution:</strong> Wait 30 seconds and try again. The first request wakes up the service.</p>
+  </div>
+
+  <h3>Issue: Page shows blank after login</h3>
+  <div class="highlight-box">
+    <p><strong>Cause:</strong> Browser cache or session issue</p>
+    <p><strong>Solution:</strong> Clear browser cache and cookies, then try again.</p>
+  </div>
+
+  <h3>Issue: "Internal Server Error" on API calls</h3>
+  <div class="highlight-box">
+    <p><strong>Cause:</strong> Database connection issue</p>
+    <p><strong>Solution:</strong> Check Render logs for detailed error. May need to restart service.</p>
+  </div>
+
+  <h3>Issue: Changes not reflecting after deployment</h3>
+  <div class="highlight-box">
+    <p><strong>Cause:</strong> Browser caching old version</p>
+    <p><strong>Solution:</strong> Hard refresh (Ctrl+Shift+R) or clear cache.</p>
+  </div>
+
+  <h2>Checking Service Health</h2>
+
+  <h3>Backend Health Check</h3>
+  <p>Visit: <code>https://lumves-crm-api.onrender.com/api/health</code></p>
+  <p>Should return: <code>{"status": "ok", "timestamp": "..."}</code></p>
+
+  <h3>View Logs</h3>
+  <ul>
+    <li><strong>Backend Logs:</strong> Render Dashboard → Service → Logs</li>
+    <li><strong>Frontend Logs:</strong> Browser Developer Tools (F12) → Console</li>
+  </ul>
+
+  <!-- Chapter 9: Support -->
+  <h1 class="page-break">9. Support</h1>
+
+  <div class="highlight-box" style="text-align: center; padding: 30px;">
+    <h2 style="margin-top: 0;">Need Help?</h2>
+    <p style="font-size: 18px;">Contact our support team:</p>
+    <p style="font-size: 24px; color: #6366f1; font-weight: bold;">
+      <a href="mailto:support@gautamjain2026.com" style="color: #6366f1; text-decoration: none;">
+        support@gautamjain2026.com
+      </a>
+    </p>
+  </div>
+
+  <h2>Support Channels</h2>
+  <table>
+    <tr>
+      <th>Channel</th>
+      <th>Contact</th>
+      <th>Response Time</th>
+    </tr>
+    <tr>
+      <td>Email Support</td>
+      <td><a href="mailto:support@gautamjain2026.com">support@gautamjain2026.com</a></td>
+      <td>24-48 hours</td>
+    </tr>
+    <tr>
+      <td>GitHub Issues</td>
+      <td><a href="https://github.com/verifiedjobs2/lumvescrm/issues">GitHub Repository</a></td>
+      <td>Varies</td>
+    </tr>
+  </table>
+
+  <h2>When Contacting Support</h2>
+  <p>Please include the following information:</p>
+  <ul>
+    <li>Description of the issue</li>
+    <li>Steps to reproduce</li>
+    <li>Browser and operating system</li>
+    <li>Screenshots (if applicable)</li>
+    <li>Error messages (if any)</li>
+  </ul>
+
+  <h2>Resources</h2>
+  <ul>
+    <li><strong>GitHub Repository:</strong> <a href="https://github.com/verifiedjobs2/lumvescrm">github.com/verifiedjobs2/lumvescrm</a></li>
+    <li><strong>Vercel Documentation:</strong> <a href="https://vercel.com/docs">vercel.com/docs</a></li>
+    <li><strong>Render Documentation:</strong> <a href="https://render.com/docs">render.com/docs</a></li>
+    <li><strong>Supabase Documentation:</strong> <a href="https://supabase.com/docs">supabase.com/docs</a></li>
+  </ul>
+
+  <footer>
+    <p><strong>Lumves CRM</strong> - Sales Management System</p>
+    <p>Version 1.0.0 | &copy; 2024 Lumves.com</p>
+    <p style="margin-top: 10px;">Support: <a href="mailto:support@gautamjain2026.com">support@gautamjain2026.com</a></p>
+  </footer>
+
+</body>
+</html>
