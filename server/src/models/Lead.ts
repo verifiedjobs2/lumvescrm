@@ -3,22 +3,36 @@ import { sequelize } from '../config/database';
 
 export interface LeadAttributes {
   id: number;
-  customer_id: number;
-  agent_id: number;
-  status: 'new' | 'contacted' | 'interested' | 'followup_scheduled' | 'converted' | 'lost';
-  interest_level: 'hot' | 'warm' | 'cold';
+  name: string;
+  email: string;
+  phone?: string;
+  company?: string;
+  source?: string;
+  status: 'new' | 'contacted' | 'qualified' | 'proposal' | 'negotiation' | 'won' | 'lost';
+  priority?: 'low' | 'medium' | 'high';
+  budget?: number;
+  notes?: string;
+  assigned_to?: number;
+  last_contact?: Date;
   created_at?: Date;
   updated_at?: Date;
 }
 
-interface LeadCreationAttributes extends Optional<LeadAttributes, 'id' | 'status' | 'created_at' | 'updated_at'> {}
+interface LeadCreationAttributes extends Optional<LeadAttributes, 'id' | 'status' | 'priority' | 'created_at' | 'updated_at'> {}
 
 class Lead extends Model<LeadAttributes, LeadCreationAttributes> implements LeadAttributes {
   public id!: number;
-  public customer_id!: number;
-  public agent_id!: number;
-  public status!: 'new' | 'contacted' | 'interested' | 'followup_scheduled' | 'converted' | 'lost';
-  public interest_level!: 'hot' | 'warm' | 'cold';
+  public name!: string;
+  public email!: string;
+  public phone!: string;
+  public company!: string;
+  public source!: string;
+  public status!: 'new' | 'contacted' | 'qualified' | 'proposal' | 'negotiation' | 'won' | 'lost';
+  public priority!: 'low' | 'medium' | 'high';
+  public budget!: number;
+  public notes!: string;
+  public assigned_to!: number;
+  public last_contact!: Date;
   public readonly created_at!: Date;
   public readonly updated_at!: Date;
 }
@@ -30,29 +44,53 @@ Lead.init(
       autoIncrement: true,
       primaryKey: true,
     },
-    customer_id: {
-      type: DataTypes.INTEGER,
+    name: {
+      type: DataTypes.STRING(100),
       allowNull: false,
-      references: {
-        model: 'customers',
-        key: 'id',
-      },
     },
-    agent_id: {
-      type: DataTypes.INTEGER,
+    email: {
+      type: DataTypes.STRING(100),
       allowNull: false,
+    },
+    phone: {
+      type: DataTypes.STRING(20),
+      allowNull: true,
+    },
+    company: {
+      type: DataTypes.STRING(100),
+      allowNull: true,
+    },
+    source: {
+      type: DataTypes.STRING(50),
+      allowNull: true,
+    },
+    status: {
+      type: DataTypes.ENUM('new', 'contacted', 'qualified', 'proposal', 'negotiation', 'won', 'lost'),
+      defaultValue: 'new',
+    },
+    priority: {
+      type: DataTypes.ENUM('low', 'medium', 'high'),
+      defaultValue: 'medium',
+    },
+    budget: {
+      type: DataTypes.DECIMAL(12, 2),
+      allowNull: true,
+    },
+    notes: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
+    assigned_to: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
       references: {
         model: 'users',
         key: 'id',
       },
     },
-    status: {
-      type: DataTypes.ENUM('new', 'contacted', 'interested', 'followup_scheduled', 'converted', 'lost'),
-      defaultValue: 'new',
-    },
-    interest_level: {
-      type: DataTypes.ENUM('hot', 'warm', 'cold'),
-      allowNull: false,
+    last_contact: {
+      type: DataTypes.DATE,
+      allowNull: true,
     },
     created_at: {
       type: DataTypes.DATE,

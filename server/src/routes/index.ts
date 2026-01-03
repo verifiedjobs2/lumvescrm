@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import authRoutes from './authRoutes';
 import userRoutes from './userRoutes';
+import aiRoutes from './aiRoutes';
 
 const router = Router();
 
@@ -12,6 +13,7 @@ router.get('/health', (req, res) => {
 // API routes
 router.use('/auth', authRoutes);
 router.use('/users', userRoutes);
+router.use('/ai', aiRoutes);
 
 // Placeholder routes for future implementation
 router.use('/customers', (req, res) => {

@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from './context/AuthContext';
 import { MainLayout } from './components/layout';
+import { AIAssistant } from './components/ai';
 
 // Pages
 import Login from './pages/auth/Login';
@@ -40,6 +41,9 @@ const App: React.FC = () => {
           {/* Catch all - redirect to dashboard */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
+
+        {/* AI Sales Assistant */}
+        <AIAssistant />
 
         {/* Toast notifications */}
         <Toaster
